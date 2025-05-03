@@ -7,8 +7,16 @@ document.addEventListener('DOMContentLoaded', function() {
   
   if (navToggle) {
     navToggle.addEventListener('click', function() {
+      // Toggle the menu visibility
       navMenu.classList.toggle('show');
       navToggle.classList.toggle('active');
+      
+      // Toggle between hamburger and X icon
+      if (navToggle.innerHTML.trim() === '☰') {
+        navToggle.innerHTML = '✕'; // X symbol when menu is open
+      } else {
+        navToggle.innerHTML = '☰'; // Hamburger symbol when menu is closed
+      }
     });
   }
   
